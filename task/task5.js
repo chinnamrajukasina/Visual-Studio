@@ -9,8 +9,9 @@ function Book(title, author, publicationYear) {
   Book.prototype.getBookInfo = function () {
     return `${this.title} by ${this.author}, published in ${this.publicationYear}`;
   };
-  
-  // Create instances of the Book object
+
+    // Create instances of the Book object
+
   const book1 = new Book('Maha Prasthanam', 'Srirangam Srinivasarao', 1950);
   const book2 = new Book('Amaravati Kathalu', 'Satyam Sankaramanch', 1975);
   
