@@ -14,3 +14,16 @@ for (var color in colors)
 var colors = [ 'saffron', 'white', 'green' ]
 for (var color in colors)
     console.log(color + ' -> ' + colors[color])
+
+
+//forin objects
+var person = {
+    name: 'John',
+    age: 30,
+    gender: 'male'
+  };
+  
+  for (var key in person) {
+    console.log(key + ': ' + person[key]);
+  }
+  

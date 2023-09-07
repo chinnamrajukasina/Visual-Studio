@@ -1,4 +1,4 @@
-//in for of loop variable takes the value 
+// for of loop variable takes the value 
 
 
 // for arrays
@@ -8,6 +8,15 @@ for(var score of scores)
 
 
 // entries() method
-var colors = [ 'saffron', 'white', 'green' ]
-for (var [index, color] of colors.entries())
-    console.log(color + ' -> ' + colors[color])
+var colors = ['saffron', 'white', 'green'];
+for (var [index, color] of colors.entries()) {
+  console.log(index + ' -> ' + colors[index]);
+}
+
+
+//forof  arrays
+var colors = ['saffron', 'white', 'green'];
+for (var color of colors) {
+    console.log(color);
+}
+    
