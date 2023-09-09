@@ -19,4 +19,6 @@ class Person{
 person1 = new Person('tony', 'newYork');
 person2 = new Person();
 console.log(person1)
+person2.setName ='spider man'
+person2.city ='newJersy'
 console.log(person2)
