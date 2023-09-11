@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+
+    <style>
+        body {
+            background-color: cadetblue;
+        }
+
+        /* Define a CSS class for button hover effect */
+        .button-hover:hover {
+            background-color: #007bff; /* Change this to the desired hover color */
+            color: #fff; /* Change this to the desired text color on hover */
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="demo">Please input a number between 5 and 10:</label>
+        <input id="demo" type="text" placeholder="Enter a number between 5 and 10">
+        <!-- Add the CSS class to the button -->
+        <button type="button" class="button-hover" onclick="myFunction()">Test Input</button>
+    </form>
+    <p id="p01" ></p>
+
+    <script>
+        function myFunction() {
+            const message = document.getElementById("p01");
+            message.innerHTML = "";
+            let x = document.getElementById("demo").value;
+            try {
+                if (x.trim() == "") throw "empty";
+                if (isNaN(x)) throw "not a number";
+                x = Number(x);
+                if (x < 5) throw "too low";
+                if (x > 10) throw "too high";
+            } catch (err) {
+                message.innerHTML = "Input is " + err;
+            } finally {
+                squareFunction(x);
+            }
+        }
+
+        // Define a square function
+        function squareFunction(x) {
+            const result = x * x;
+            alert("Square of " + x + " is " + result);
+        }
+    </script>
+</body>
+</html>
