@@ -24,7 +24,7 @@
         <!-- Add the CSS class to the button -->
         <button type="button" class="button-hover" onclick="myFunction()">Test Input</button>
     </form>
-    <p id="p01" ></p>
+    <p id="p01" h6></p>
 
     <script>
         function myFunction() {
@@ -32,15 +32,17 @@
             message.innerHTML = "";
             let x = document.getElementById("demo").value;
             try {
-                if (x.trim() == "") throw "empty";
+                if (x.trim() == "") throw "empty" ;
                 if (isNaN(x)) throw "not a number";
                 x = Number(x);
+                if (x>=5&& x<=10)
+                squareFunction(x);
                 if (x < 5) throw "too low";
                 if (x > 10) throw "too high";
             } catch (err) {
                 message.innerHTML = "Input is " + err;
             } finally {
-                squareFunction(x);
+                
             }
         }
 
