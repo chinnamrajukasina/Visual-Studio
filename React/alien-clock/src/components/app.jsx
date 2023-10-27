@@ -7,19 +7,6 @@ const daysInMonth = [
   [40, 40, 42, 44, 48, 42, 40, 44, 38],
 ];
 
-// class AlienClockApp extends Component {
-//   constructor(props) {
-//     super(props);
-
-//     this.state = {
-//       alienYear: 1,
-//       alienMonth: 1,
-//       alienDay: 1,
-//       alienHour: 0,
-//       alienMinute: 0,
-//       alienSecond: 0,
-//     };
-//   }
 class AlienClockApp extends Component {
   constructor(props) {
     super(props);

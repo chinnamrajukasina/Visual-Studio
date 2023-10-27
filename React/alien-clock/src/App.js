@@ -1,5 +1,5 @@
 import './App.css';
-import AlienClockApp from './components/app';
+import AlienClockApp from './components/app'
 
 
 function App() {
