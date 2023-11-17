@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <a href="#" onclick="toggleView('home')">Home</a>
+    <a href="#" onclick="toggleView('about')">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Logout</a>      
+</nav>
+
+<!-- Main Content -->
+<div id="homeView">
+    <!-- Main Content Grid -->
+    <div class="grid-container">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+        <div class="grid-item">Item 6</div>
+    </div>
+</div>
+
+<div id="aboutView" style="display:none;">
+    <!-- About Information -->
+    <div class="about-info">
+        
+        <h2>About Us</h2>
+        <p>This is some information about us...</p>
+        <p>Threat Intelligence Bureau LTD based out of London UK, is the brainchild of Ashwin Venugopal, 
+          Microsoft Most Valuable Professional #1 of #36 in the entire UK. 
+          His vision is to provide maximum security and peace of mind to individuals, organizations, 
+          and institutions through AI-powered cybersecurity operations.
+
+          Additionally, we are dedicated to researching various attacks and developing cybersecurity tools.</p>
+
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
