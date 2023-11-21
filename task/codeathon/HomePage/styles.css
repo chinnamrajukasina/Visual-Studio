@@ -1,4 +1,8 @@
 /* Reset some default styles for better consistency across browsers */
+h1 {
+    text-align: center;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -31,18 +35,66 @@ nav a:last-child {
     float: right;
 }
 
-/* Style for the main content grid */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     padding: 20px;
 }
 
 .grid-item {
-    border: 1px solid #ccc;
-    padding: 20px;
+    border: 1px solid #cacaca;
+    border-radius: 10px;
+    /* Adjusted border-radius */
     text-align: center;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Additional styles for the background image */
+.grid-item .background-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+/* Specific background image for each grid item */
+.grid-item-1 {
+    background-image: url('./resource/cyber_grid/denail_of_service.jpg');
+}
+
+.grid-item-2 {
+    background-image: url('./resource/cyber_grid/DNS_attack.jpg');
+}
+
+.grid-item-3 {
+    background-image: url('./resource/cyber_grid/malware.jpeg');
+}
+
+.grid-item-4 {
+    background-image: url('./resource/cyber_grid/man_in_the_middle.jpg');
+}
+
+.grid-item-5 {
+    background-image: url('./resource/cyber_grid/phishing.jpg');
+}
+
+.grid-item-6 {
+    background-image: url('./resource/cyber_grid/Spear_phishing.jpg');
+}
+
+.grid-item-7 {
+    background-image: url('./resource/cyber_grid/SQL-injection.jpg');
+
 }
 
 /* Style for the about information */
@@ -50,7 +102,7 @@ nav a:last-child {
     padding: 20px;
     color: white;
     text-decoration-style: double;
-    text-align: left ;
+    text-align: left;
 }
 
 /* Style for the background image when about is open */
@@ -58,8 +110,14 @@ body.about-opened {
     background: url('./resource/about_wallpaper.webp') no-repeat center center fixed;
     background-size: cover;
 }
-body.home-opened {
-    background: url('./resource/home.jpeg') no-repeat center center fixed;
-    background-size: cover;
-    background-blend-mode: hard-light;
+
+
+/* Add some styling for the displayed information */
+.info {
+    display: none;
+    padding: 20px;
+}
+
+.info.active {
+    display: block;
 }

@@ -1,12 +1,15 @@
 function validateSignIn() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
-
     if (username === 'Ekip' && password === 'Ekip@123') {
-        setTimeout(() => alert('Sign-in successful!'), 500);
-        document.body.style.backgroundImage = 'url("./resource/welcome.jpeg")';
-        document.getElementById('signInForm').style.display = 'none';
-        window.location.href = '../HomePage/index2.html';
+        setTimeout(() => {
+            alert('Sign-in successful!');
+            document.body.style.backgroundImage = 'url("./resource/welcome.jpeg")';
+            document.getElementById('signInForm').style.display = 'none';
+            setTimeout(() => {
+                window.location.href = '../HomePage/index.html';
+            }, 1000); // Adjust the delay time as needed
+        }, 500);
     } else if (username === '' || password === '') {
         setTimeout(() => alert('Please enter your credentials or click the Sign Up button.'), 500);
         document.body.style.backgroundImage = 'url("./resource/empty.jpeg")';
