@@ -1,113 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<!-- Navigation Bar -->
-<header><nav>
-    <a href="#" onclick="toggleView('home')">Home</a>
-    <a href="#" onclick="toggleView('about')">About</a>
-    <a href="#" onclick="toggleView('contact')">Contact</a>
-    <a href="#" onclick="toggleView('Logout')">Logout</a>      
-</nav></header>
 
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <a href="#" onclick="toggleView('home')">Home</a>
+            <a href="#" onclick="toggleView('about')">About</a>
+            <a href="#" class="dropdown" onclick="toggleContactDropdown()">Contact</a>
+            <ul id="contactDropdown" class="dropdown-content">
+                <li><a href="#">Name</a></li>
+                <li><a href="#">Website</a></li>
+                <!-- Add more dropdown options as needed -->
+            </ul>
+            </div>
+            <a href="#" onclick="toggleView('Logout')">Logout</a>
+        </nav>
+    </header>
 
+    <!-- Main Content -->
+    <div id="homeView">
+        <h1>Top Cybersecurity Threads</h1>
+        <!-- Main Content Grid -->
+        <div class="grid-container">
+            <div class="grid-item grid-item-1" onclick="showInfo(1)">Denial-of-Service (DoS)</div>
+            <div class="grid-item grid-item-2" onclick="showInfo(2)">DNS Attack</div>
+            <div class="grid-item grid-item-3" onclick="showInfo(3)">Malware Attacks</div>
+            <div class="grid-item grid-item-4" onclick="showInfo(4)">Man-in-the-middle (MITM) attack</div>
+            <div class="grid-item grid-item-5" onclick="showInfo(5)">Phishing Attack</div>
+            <div class="grid-item grid-item-6" onclick="showInfo(6)">Spear Phishing Attack</div>
+            <div class="grid-item grid-item-7" onclick="showInfo(7)">SQL Injection</div>
+            <div class="grid-item grid-item-8" onclick="openNewPage()">Test Page</div>
+        </div>
+        <!-- Information for each grid item -->
+        <div class="info" id="info-1">
+            <h2>Denial-of-Service (DoS)</h2>
+            <br>
+            <p>A Denial-of-Service (DoS) attack is an attack meant to shut down a machine or network, making it
+                inaccessible to its intended users. DoS attacks accomplish this by flooding the target with traffic, or
+                sending it information that triggers a crash. In both instances, the DoS attack deprives legitimate
+                users (i.e. employees, members, or account holders) of the service or resource they expected.</p>
+            <p>There are two general methods of DoS attacks: flooding services or crashing services. Flood attacks occur
+                when the system receives too much traffic for the server to buffer, causing them to slow down and
+                eventually stop. Popular flood attacks include:</p>
+            <ul>
+                <li><b>Buffer overflow attacks </b>the most common DoS attack. The concept is to send more traffic to a
+                    network address than the programmers have built the system to handle. It includes the attacks listed
+                    below, in addition to others that are designed to exploit bugs specific to certain applications or
+                    networks</li>
+                <li><b>ICMP flood </b>leverages misconfigured network devices by sending spoofed packets that ping every
+                    computer on the targeted network, instead of just one specific machine. The network is then
+                    triggered to amplify the traffic. This attack is also known as the smurf attack or ping of death.
+                </li>
+                <li><b>SYN flood</b>sends a request to connect to a server, but never completes the handshake. Continues
+                    until all open ports are saturated with requests and none are available for legitimate users to
+                    connect to.</li>
+            </ul>
+        </div>
+        <div class="info" id="info-2">
+            <h2>DNS Attack</h2>
+            <br>
+            <p>A Domain Name System (DNS) attack is where cyber-criminals exploit vulnerabilities found in the Domain
+                Name System (DNS) of a server. The purpose of the domain name system is to translate user-friendly
+                domain names into machine-readable IP addresses, via a DNS resolver.</p>
+            <p>The DNS resolver will first query its own local cache for the domain name and IP address. If it fails to
+                locate the records, it will continue to query other DNS servers. Failing that, it will look for the DNS
+                server that contains the canonical mapping of the domain.</p>
+            <h4>Types of DNS Attack</h4>
+            <p>There are many different types of DNS attacks, whose purpose is to exploit vulnerabilities found in the
+                three types of DNS servers. These include the DNS stub resolver server, DNS recursive resolver server,
+                and DNS authoritative server.</p>
+            <ul>
+                <li><b>Zero-day attack: </b>This is where the attacker exploits DNS software vulnerabilities that were
+                    previously unknown to the victims.</li>
+                <li><b>Cache poisoning:</b>Cache poisoning is where the attacker tricks DNS resolvers into caching false
+                    information, such as IP addresses, in an attempt to redirect traffic to a malicious website.</li>
+                <li><b>Distributed Denial of Service (DDoS):</b> This is where an attacker floods a DNS server with
+                    traffic in order to cause disruption and make it unavailable to its intended users. Unlike a simple
+                    Denial of Service (DoS) attack which sends traffic from a single device, a DDoS attack will use a
+                    botnet, which usually involves compromising random devices on different networks, in order to send
+                    large amounts of distributed traffic to the target server.</li>
+            </ul>
+        </div>
+        <div class="info" id="info-3">
+            <h2>Malware Attacks</h2>
+            <br>
+            <p>Malware attacks involve the use of malicious software to compromise systems, steal data, or disrupt
+                normal operations. Types of malware include viruses, worms, trojan horses, ransomware, and spyware.</p>
+            <p>Attackers often deliver malware through email attachments, infected websites, or compromised software.
+                Once installed, malware can execute various malicious activities, such as stealing sensitive
+                information, encrypting files for ransom, or turning infected machines into bots for further attacks.
+            </p>
+        </div>
 
-<!-- Main Content -->
-<div id="homeView">
-    <h1>Top Cybersecurity Threads</h1>
-    <!-- Main Content Grid -->
-    <div class="grid-container">
-        <div class="grid-item grid-item-1" onclick="showInfo(1)">Denial-of-Service (DoS)</div>
-        <div class="grid-item grid-item-2" onclick="showInfo(2)">DNS Attack</div>
-        <div class="grid-item grid-item-3" onclick="showInfo(3)">Malware Attacks</div>
-        <div class="grid-item grid-item-4" onclick="showInfo(4)">Man-in-the-middle (MITM) attack</div>
-        <div class="grid-item grid-item-5" onclick="showInfo(5)">Phishing Attack</div>
-        <div class="grid-item grid-item-6" onclick="showInfo(6)">Spear Phishing Attack</div>
-        <div class="grid-item grid-item-7" onclick="showInfo(7)">SQL Injection</div>
+        <div class="info" id="info-4">
+            <h2>Man-in-the-middle (MITM) attack</h2>
+            <br>
+            <p>A Man-in-the-Middle (MITM) attack occurs when a malicious actor intercepts and potentially alters the
+                communication between two parties without their knowledge. This can lead to unauthorized access to
+                sensitive information.</p>
+            <p>Common MITM techniques include packet sniffing, session hijacking, and DNS spoofing. Attackers may target
+                public Wi-Fi networks, compromising routers, or exploiting vulnerabilities in communication protocols to
+                carry out MITM attacks.</p>
+        </div>
+
+        <div class="info" id="info-5">
+            <h2>Phishing Attack</h2>
+            <br>
+            <p>Phishing attacks involve tricking individuals into revealing sensitive information, such as login
+                credentials or financial details, by posing as a trustworthy entity. Phishing can occur through emails,
+                messages, or fake websites.</p>
+            <p>Attackers often use social engineering tactics to create convincing messages that prompt victims to click
+                on malicious links or provide sensitive information. Awareness and caution are crucial to avoid falling
+                victim to phishing attacks.</p>
+        </div>
+
+        <div class="info" id="info-6">
+            <h2>Spear Phishing Attack</h2>
+            <br>
+            <p>Spear phishing is a targeted form of phishing where attackers tailor their messages to specific
+                individuals or organizations. The goal is to deceive recipients into taking actions that benefit the
+                attacker, such as revealing confidential information or executing malware.</p>
+            <p>Spear phishing often involves extensive research on the target, making the deceptive messages more
+                convincing. It is a sophisticated form of social engineering that requires vigilance to detect and
+                prevent.</p>
+        </div>
+
+        <div class="info" id="info-7">
+            <h2>SQL Injection</h2>
+            <br>
+            <p>SQL injection is a type of cyber attack that targets the vulnerability in a web application's database
+                layer. Attackers inject malicious SQL code into input fields, exploiting poorly sanitized user inputs to
+                manipulate the database.</p>
+            <p>The consequences of successful SQL injection can include unauthorized access to sensitive data, data
+                manipulation, and potentially the compromise of the entire database. Preventing SQL injection involves
+                using parameterized queries and input validation.</p>
+        </div>
     </div>
-    <!-- Information for each grid item -->
-<div class="info" id="info-1">
-    <h2>Denial-of-Service (DoS)</h2>
-    <br>
-    <p>A Denial-of-Service (DoS) attack is an attack meant to shut down a machine or network, making it inaccessible to its intended users. DoS attacks accomplish this by flooding the target with traffic, or sending it information that triggers a crash. In both instances, the DoS attack deprives legitimate users (i.e. employees, members, or account holders) of the service or resource they expected.</p>
-    <p>There are two general methods of DoS attacks: flooding services or crashing services. Flood attacks occur when the system receives too much traffic for the server to buffer, causing them to slow down and eventually stop. Popular flood attacks include:</p>
-    <ul>
-        <li><b>Buffer overflow attacks </b>the most common DoS attack. The concept is to send more traffic to a network address than the programmers have built the system to handle. It includes the attacks listed below, in addition to others that are designed to exploit bugs specific to certain applications or networks</li>
-        <li><b>ICMP flood </b>leverages misconfigured network devices by sending spoofed packets that ping every computer on the targeted network, instead of just one specific machine. The network is then triggered to amplify the traffic. This attack is also known as the smurf attack or ping of death.</li>
-        <li><b>SYN flood</b>sends a request to connect to a server, but never completes the handshake. Continues until all open ports are saturated with requests and none are available for legitimate users to connect to.</li>
-    </ul>
-</div>
-<div class="info" id="info-2">
-    <h2>DNS Attack</h2>
-    <br>
-    <p>A Domain Name System (DNS) attack is where cyber-criminals exploit vulnerabilities found in the Domain Name System (DNS) of a server. The purpose of the domain name system is to translate user-friendly domain names into machine-readable IP addresses, via a DNS resolver.</p>
-    <p>The DNS resolver will first query its own local cache for the domain name and IP address. If it fails to locate the records, it will continue to query other DNS servers. Failing that, it will look for the DNS server that contains the canonical mapping of the domain.</p>
-    <h4>Types of DNS Attack</h4>
-    <p>There are many different types of DNS attacks, whose purpose is to exploit vulnerabilities found in the three types of DNS servers. These include the DNS stub resolver server, DNS recursive resolver server, and DNS authoritative server.</p>
-<ul>
-    <li><b>Zero-day attack: </b>This is where the attacker exploits DNS software vulnerabilities that were previously unknown to the victims.</li>
-    <li><b>Cache poisoning:</b>Cache poisoning is where the attacker tricks DNS resolvers into caching false information, such as IP addresses, in an attempt to redirect traffic to a malicious website.</li>
-    <li><b>Distributed Denial of Service (DDoS):</b> This is where an attacker floods a DNS server with traffic in order to cause disruption and make it unavailable to its intended users. Unlike a simple Denial of Service (DoS) attack which sends traffic from a single device, a DDoS attack will use a botnet, which usually involves compromising random devices on different networks, in order to send large amounts of distributed traffic to the target server.</li>
-</ul>
-</div>
-<div class="info" id="info-3">
-    <h2>Malware Attacks</h2>
-    <br>
-    <p>Malware attacks involve the use of malicious software to compromise systems, steal data, or disrupt normal operations. Types of malware include viruses, worms, trojan horses, ransomware, and spyware.</p>
-    <p>Attackers often deliver malware through email attachments, infected websites, or compromised software. Once installed, malware can execute various malicious activities, such as stealing sensitive information, encrypting files for ransom, or turning infected machines into bots for further attacks.</p>
-</div>
 
-<div class="info" id="info-4">
-    <h2>Man-in-the-middle (MITM) attack</h2>
-    <br>
-    <p>A Man-in-the-Middle (MITM) attack occurs when a malicious actor intercepts and potentially alters the communication between two parties without their knowledge. This can lead to unauthorized access to sensitive information.</p>
-    <p>Common MITM techniques include packet sniffing, session hijacking, and DNS spoofing. Attackers may target public Wi-Fi networks, compromising routers, or exploiting vulnerabilities in communication protocols to carry out MITM attacks.</p>
-</div>
-
-<div class="info" id="info-5">
-    <h2>Phishing Attack</h2>
-    <br>
-    <p>Phishing attacks involve tricking individuals into revealing sensitive information, such as login credentials or financial details, by posing as a trustworthy entity. Phishing can occur through emails, messages, or fake websites.</p>
-    <p>Attackers often use social engineering tactics to create convincing messages that prompt victims to click on malicious links or provide sensitive information. Awareness and caution are crucial to avoid falling victim to phishing attacks.</p>
-</div>
-
-<div class="info" id="info-6">
-    <h2>Spear Phishing Attack</h2>
-    <br>
-    <p>Spear phishing is a targeted form of phishing where attackers tailor their messages to specific individuals or organizations. The goal is to deceive recipients into taking actions that benefit the attacker, such as revealing confidential information or executing malware.</p>
-    <p>Spear phishing often involves extensive research on the target, making the deceptive messages more convincing. It is a sophisticated form of social engineering that requires vigilance to detect and prevent.</p>
-</div>
-
-<div class="info" id="info-7">
-    <h2>SQL Injection</h2>
-    <br>
-    <p>SQL injection is a type of cyber attack that targets the vulnerability in a web application's database layer. Attackers inject malicious SQL code into input fields, exploiting poorly sanitized user inputs to manipulate the database.</p>
-    <p>The consequences of successful SQL injection can include unauthorized access to sensitive data, data manipulation, and potentially the compromise of the entire database. Preventing SQL injection involves using parameterized queries and input validation.</p>
-</div>
-</div>
-
-<div id="aboutView" style="display:none;">
-    <!-- About Information -->
-    <div class="about-info">
-        <h2>About Us</h2>
-        <p>This is some information about us...</p>
-        <p>Threat Intelligence Bureau LTD based out of London UK, is the brainchild of Ashwin Venugopal, 
-          Microsoft Most Valuable Professional #1 of #36 in the entire UK. 
-          His vision is to provide maximum security and peace of mind to individuals, organizations, 
-          and institutions through AI-powered cybersecurity operations.</p>
-        <p>Additionally, we are dedicated to researching various attacks and developing cybersecurity tools.</p>
+    <div id="aboutView" style="display:none;">
+        <!-- About Information -->
+        <div class="about-info">
+            <h2>About Us</h2>
+            <p>This is some information about us...</p>
+            <p>Threat Intelligence Bureau LTD based out of London UK, is the brainchild of Ashwin Venugopal,
+                Microsoft Most Valuable Professional #1 of #36 in the entire UK.
+                His vision is to provide maximum security and peace of mind to individuals, organizations,
+                and institutions through AI-powered cybersecurity operations.</p>
+            <p>Additionally, we are dedicated to researching various attacks and developing cybersecurity tools.</p>
+        </div>
     </div>
-</div>
 
 
 
 
-<script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
+
 </html>

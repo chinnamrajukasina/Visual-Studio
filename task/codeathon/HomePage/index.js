@@ -7,12 +7,16 @@ function toggleView(view) {
         body.classList.add('home-opened');
         homeView.style.display = 'block';
         aboutView.style.display = 'none';
+        body.classList.remove('about-opened');
     } else if (view === 'about') {
         body.classList.add('about-opened');
         homeView.style.display = 'none';
         aboutView.style.display = 'block';
+        body.classList.remove('home-opened');
     }
 }
+
+
 
 function showInfo(infoNumber) {
     // Hide all info elements
@@ -29,4 +33,39 @@ function showInfo(infoNumber) {
     document.getElementById('aboutView').style.display = 'none';
     // Show the homeView
     document.getElementById('homeView').style.display = 'block';
+}
+
+function handleGridItemClick(event) {
+    var clickedElement = event.target;
+
+    // Remove 'clicked' class from all grid items
+    var gridItems = document.querySelectorAll('.grid-item');
+    gridItems.forEach(function (element) {
+        element.classList.remove('clicked');
+    });
+
+    // Add 'clicked' class to the clicked grid item
+    clickedElement.classList.add('clicked');
+}
+
+// Add click event listeners to all grid items
+var gridItems = document.querySelectorAll('.grid-item');
+gridItems.forEach(function (element) {
+    element.addEventListener('click', handleGridItemClick);
+});
+// index.js
+
+// Other functions...
+function toggleContactDropdown() {
+    var dropdownContent = document.getElementById('contactDropdown');
+    if (dropdownContent.style.display === 'block') {
+        dropdownContent.style.display = 'none';
+    } else {
+        dropdownContent.style.display = 'block';
+    }
+}
+   // JavaScript function to open the new page
+   function openNewPage() {
+    // Redirect to the desired HTML page
+    window.location.href = '../testFile/index.html' // Replace with the actual page path
 }
