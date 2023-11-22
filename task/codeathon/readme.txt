@@ -1,4 +1,4 @@
-this codeathon project task was start form index.html running in local browser using credentials
+this codeathon project task was start form index.html in the Authentication folder running in local browser using credentials
 username: Ekip
 password: Ekip@123
 after succesfull login you will redirected to home page that having the major information about cyber security
