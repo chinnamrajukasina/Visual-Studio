@@ -50,3 +50,14 @@ label {
 .switch input:checked+.slider:before {
     transform: translateX(26px);
 }
+
+
+#container {
+    transition: background-color 0.5s ease; /* Add a transition effect for smooth color change */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #container.checked {
+    background-color: #2a2c2f; /* Background color when the switch is checked */
+  }

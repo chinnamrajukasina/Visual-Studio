@@ -22,7 +22,11 @@
                 <li><a href="#">Website</a></li>
                 <!-- Add more dropdown options as needed -->
             </ul>
-            </div>
+            <label for="mySwitch" id ="switch">Toggle Switch:</label>
+            <label class="switch">
+                <input type="checkbox" id="mySwitch">
+                <span class="slider"></span>
+            </label>
             <a href="#" onclick="toggleView('Logout')">Logout</a>
         </nav>
     </header>
@@ -42,7 +46,7 @@
             <div class="grid-item grid-item-8" onclick="openNewPage()">Test Page</div>
         </div>
         <!-- Information for each grid item -->
-        <div class="info" id="info-1">
+      <div class="info" id="info-1" >
             <h2>Denial-of-Service (DoS)</h2>
             <br>
             <p>A Denial-of-Service (DoS) attack is an attack meant to shut down a machine or network, making it
@@ -146,7 +150,6 @@
                 using parameterized queries and input validation.</p>
         </div>
     </div>
-
     <div id="aboutView" style="display:none;">
         <!-- About Information -->
         <div class="about-info">
