@@ -22,3 +22,4 @@ console.log(person1)
 person2.setName ='spider man'
 person2.city ='newJersy'
 console.log(person2)
+
