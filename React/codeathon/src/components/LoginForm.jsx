@@ -20,7 +20,6 @@ function LoginForm({ onSignUpClick }) {
 
   return (
     <div>
-      {/* Render your SignIn form JSX here */}
       <input
         type="text"
         id="username"
@@ -33,9 +32,18 @@ function LoginForm({ onSignUpClick }) {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
+      <input
+        type="text"
+        id="avatar"
+        placeholder="Enter Avatar URL"
+        value={avatar}
+        onChange={(e) => setAvatar(e.target.value)}
+      />
       <button onClick={validateSignIn}>Sign In</button>
       <button onClick={onSignUpClick}>Sign Up</button>
+      {avatar && <img src={avatar} alt="User Avatar" />}
     </div>
+
   );
 }
 
