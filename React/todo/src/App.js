@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import TodoList from "./TodoList";
-import uuidv4 from 'uuid/v4'
+import { v4 as uuidv4 } from 'uuid';
 const LOCAL_SORAGE_KEY = 'todoApp.todos'
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
     const storedTodos = JSON.parse(localStorage.getItem(LOCAL_SORAGE_KEY))
     if(storedTodos) setTodos(storedTodos)
   }, [])
+
   useEffect(()=>{
     localStorage.setItem(LOCAL_SORAGE_KEY, JSON.stringify(todos))
   },[todos])
