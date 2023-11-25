@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import TodoList from "./TodoList";
 import uuidv4 from 'uuid/v4'
+const LOCAL_SORAGE_KEY = 'todoApp.todos'
 
 function App() {
   const [todos, setTodos] = useState([])
