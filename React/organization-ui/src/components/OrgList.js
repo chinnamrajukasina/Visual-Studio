@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Org from './Org'
 
-export default function OrgList({orgs}) {
-    
+
+
+
+
+export default function OrgList(data) {
+    const [orgs, setOrgs] = useState(data.orgs);
+
+    const handleRemoveOrg = (id) => {
+        console.log("Remove operation on ", id);
+        setOrgs(orgs.filter(org => org.id !== id))
+        
+        
+      }
+
   return (
     <div>
-       { console.log(orgs)}
-
-    {orgs.map(org => <Org org={org} key = {org.id}></Org>)}
-
-
+    {orgs.map(org => <Org org={org} key = {org.id} handleRemoveOrg={handleRemoveOrg}></Org>)}
     </div>
   )
 }
