@@ -3,7 +3,10 @@ import data from "./data"
 
 function App() {
   return (
-    <OrgList orgs={data}/>  
+    <>  
+     
+     <OrgList orgs={data}/>  
+    </>
     );
 }
 
