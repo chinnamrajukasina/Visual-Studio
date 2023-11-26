@@ -11,8 +11,23 @@ export default function EmpList(data) {
     setEmps(updatedEmps)
   } 
 
+  const handleUpdateEmp = (employee) => {
+    const id = employee.id;
+    console.log("update operation on ", id);
+    const updatedEmps = [...emps];
+    var updatedEmp = updatedEmps.filter(emp => emp.id === id);
+    updatedEmp.name = employee.name;
+    updatedEmp.email = employee.email;
+    setEmps(updatedEmps)
+  } 
+
   return (
 
-    emps &&  emps.map(emp => <Emp emp={emp} key = {emp.id} handleRemoveEmp = {handleRemoveEmp}></Emp>)
+    emps &&  emps.map(emp => <Emp 
+      emp={emp} 
+      key = {emp.id}
+      handleRemoveEmp = {handleRemoveEmp}
+      handleUpdateEmp= {handleUpdateEmp}
+      ></Emp>)
   )
 }
