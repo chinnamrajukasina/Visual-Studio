@@ -6,12 +6,16 @@ import EmpList from './EmpList';
 
 
 export default function Org({ currentOrg, handleRemoveOrg }) {
+
     const [org, setOrg] = useState(currentOrg)
 
     const handleAddEmployee = () => {
-       const currentOrg = [...org];
-       const updatedEmps = [...currentOrg.employees, {id: -1, name: "xxx", email: "xxxx"}];
-        currentOrg.employees = updatedEmps;
+       const currentOrg = {...org};
+       if(currentOrg.employees == null){
+        currentOrg.employees = [];
+       } 
+        currentOrg.employees.push({id: currentOrg.employees.length+1, name: "xxx", email: ""});
+        console.log("from handleAddEmsss ", currentOrg)
         setOrg(currentOrg)
 
       }
@@ -22,7 +26,7 @@ export default function Org({ currentOrg, handleRemoveOrg }) {
       }
 
   return (
-    <Card title={org.name} style={{ width: 300 }}>
+    org && <Card title={org.name} style={{ width: 300 }}>
       <p>Address : {org.address}</p>
       <div>
         <button onClick={() => handleAddEmployee()}>Add Employee</button>

@@ -11,7 +11,14 @@ export default function OrgList(data) {
 
   return (
     <div>
-      {orgs.map(org => <Org org={org} key={org.id} handleRemoveOrg={handleRemoveOrg}></Org>)}
+        {console.log("from orgList ", orgs)}
+      {orgs.map(org => 
+       <Org 
+            currentOrg={org}
+            key={org.id}
+            handleRemoveOrg={() => handleRemoveOrg}>
+            
+            </Org>)}
     </div>
   )
 }
