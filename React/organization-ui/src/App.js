@@ -1,8 +1,12 @@
+import OrgList from "./components/OrgList";
+import data from "./data"
 
 function App() {
   return (
-    <>something</>
-  );
+    <OrgList orgs={data} name = 'something'/>  
+    );
 }
 
 export default App;
+
+
