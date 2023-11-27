@@ -8,17 +8,29 @@ export default function OrgList(data) {
     console.log("Remove operation on ", id);
     setOrgs(orgs.filter(org => org.id !== id))
   }
+  const handleUpdateOrg = (org) =>{
+    debugger;
+    console.log("in orglist")
+    const id = org.id;
+    console.log("updated operations on", id);
+    const updatedOrgs = [...orgs];
+    var updatedOrg = updatedOrgs.filter(org => org.id === id);
+    updatedOrg.name = org.name;
+    updatedOrg.address = org.address;
+    setOrgs(updatedOrgs)
+  }
 
   return (
-    <div>
-      {console.log("from orgList ", orgs)}
-      {orgs.map(org =>
+
+
+      orgs.map(org =>
         <Org
           currentOrg={org}
           key={org.id}
-          handleRemoveOrg={() => handleRemoveOrg}>
+          handleRemoveOrg={handleRemoveOrg}
+          handleUpdateOrg= {handleUpdateOrg}>
+        </Org>
+        )
 
-        </Org>)}
-    </div>
   )
 }

@@ -20,13 +20,13 @@ const orgs = [
         "id": "655b8586274f60195827be0e",
         "name": "Organisation Name2",
         "address": "Organisation Address2",
-        "employees": null
+        "employees": []
     },
     {
         "id": "655b873f274f60195827be12",
         "name": "Organisation Name3",
         "address": "Organisation Address3",
-        "employees": null
+        "employees": []
     }
   ];
 
