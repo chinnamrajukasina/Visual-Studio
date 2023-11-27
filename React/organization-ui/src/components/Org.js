@@ -14,7 +14,13 @@ export default function Org({ currentOrg, handleRemoveOrg }) {
        if(currentOrg.employees == null){
         currentOrg.employees = [];
        } 
-        currentOrg.employees.push({id: currentOrg.employees.length+1, name: "xxx", email: ""});
+       currentOrg.employees.push({
+        id: currentOrg.employees.length + 1,
+        name: `xman${currentOrg.employees.length + 1}`,
+        email: `xman${currentOrg.employees.length + 1}@ekip.com`
+      });
+      
+      
         console.log("from handleAddEmsss ", currentOrg)
         setOrg(currentOrg)
 

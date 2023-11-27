@@ -1,12 +1,7 @@
 import React, { useState } from 'react'
 import { Card } from 'antd';
 
-
-
-
-
-
-export default function Emp({emp, handleRemoveEmp, handleUpdateEmp}) {
+export default function Emp({ emp, handleRemoveEmp, handleUpdateEmp }) {
 
   const [name, setName] = useState(emp.name);
   const [email, setEmail] = useState(emp.email);
@@ -20,7 +15,7 @@ export default function Emp({emp, handleRemoveEmp, handleUpdateEmp}) {
   }
   return (
 
-    <Card title={emp.name} style={{ width: 300 }}>
+    <Card title={emp.name} style={{ width: 300, backgroundColor: 'Turquoise' }}>
       <label>
         Employee name: <input value={name} onChange={(e) => setName(e.target.value)} type="text" />
       </label>
