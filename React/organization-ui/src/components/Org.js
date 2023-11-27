@@ -1,42 +1,37 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Card } from 'antd';
 import EmpList from './EmpList';
 
+export default function Org({ currentOrg, handleRemoveOrg }) {  
+  const [org, setOrg] = useState(currentOrg)
+  const handleAddEmployee = () => {
+    const currentOrg = { ...org };
+    if (currentOrg.employees == null) {
+      currentOrg.employees = [];
+    }
+    currentOrg.employees.push({
+      id: currentOrg.employees.length + 1,
+      name: `xman${currentOrg.employees.length + 1}`,
+      email: `xman${currentOrg.employees.length + 1}@ekip.com`
+    });
 
 
+    console.log("from handleAddEmsss ", currentOrg)
+    setOrg(currentOrg)
 
-export default function Org({ currentOrg, handleRemoveOrg }) {
+  }
 
-    const [org, setOrg] = useState(currentOrg)
-
-    const handleAddEmployee = () => {
-       const currentOrg = {...org};
-       if(currentOrg.employees == null){
-        currentOrg.employees = [];
-       } 
-       currentOrg.employees.push({
-        id: currentOrg.employees.length + 1,
-        name: `xman${currentOrg.employees.length + 1}`,
-        email: `xman${currentOrg.employees.length + 1}@ekip.com`
-      });
-      
-      
-        console.log("from handleAddEmsss ", currentOrg)
-        setOrg(currentOrg)
-
-      }
-      
-      const handleUpdate = (id) => {
-        console.log("Update operation on ", id);
-        // Implement your update logic here
-      }
+  cons = (id) => {
+    console.log("Update operation on ", id);
+    // Implement your update logic here
+  }
 
   return (
-    org && <Card title={org.name} style={{ width: 300 }}>
+    org && <Card title={org.name} style={{ width: 300, backgroundColor: 'DodgerBlue' }}>
       <p>Address : {org.address}</p>
       <div>
         <button onClick={() => handleAddEmployee()}>Add Employee</button>
-        <button onClick={() => handleUpdate(org.id)}>Update Org</button>
+        <button onClick={() => handleUpda(org.id)}>Update Org</button>
         <button onClick={() => handleRemoveOrg(org.id)}>Remove Org</button>
       </div>
       <EmpList emps={org.employees} />

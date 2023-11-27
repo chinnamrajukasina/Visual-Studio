@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 import { Card } from 'antd';
+import { ColorFormat } from 'antd/es/color-picker/interface';
 
-export default function Emp({ emp, handleRemoveEmp, handleUpdateEmp }) {
+
+
+
+
+
+export default function Emp({emp, handleRemoveEmp, handleUpdateEmp}) {
 
   const [name, setName] = useState(emp.name);
   const [email, setEmail] = useState(emp.email);
@@ -15,7 +21,7 @@ export default function Emp({ emp, handleRemoveEmp, handleUpdateEmp }) {
   }
   return (
 
-    <Card title={emp.name} style={{ width: 300, backgroundColor: 'Turquoise' }}>
+  <Card title={emp.name} style={{ width: 300, backgroundColor: 'red' }}>
       <label>
         Employee name: <input value={name} onChange={(e) => setName(e.target.value)} type="text" />
       </label>
