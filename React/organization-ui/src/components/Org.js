@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Card } from 'antd';
 import EmpList from './EmpList';
 
-export default function Org({ currentOrg, handleRemoveOrg }) {  
+export default function Org({ currentOrg, handleRemoveOrg }) {
   const [org, setOrg] = useState(currentOrg)
+
   const handleAddEmployee = () => {
     const currentOrg = { ...org };
     if (currentOrg.employees == null) {
@@ -21,7 +22,7 @@ export default function Org({ currentOrg, handleRemoveOrg }) {
 
   }
 
-  cons = (id) => {
+  const handleUpdate = (id) => {
     console.log("Update operation on ", id);
     // Implement your update logic here
   }
@@ -30,9 +31,9 @@ export default function Org({ currentOrg, handleRemoveOrg }) {
     org && <Card title={org.name} style={{ width: 300, backgroundColor: 'DodgerBlue' }}>
       <p>Address : {org.address}</p>
       <div>
-        <button onClick={() => handleAddEmployee()}>Add Employee</button>
-        <button onClick={() => handleUpda(org.id)}>Update Org</button>
+        <button onClick={() => handleUpdate(org.id)}>Update Org</button>
         <button onClick={() => handleRemoveOrg(org.id)}>Remove Org</button>
+        <button onClick={() => handleAddEmployee()}>Add Employee</button>
       </div>
       <EmpList emps={org.employees} />
     </Card>
