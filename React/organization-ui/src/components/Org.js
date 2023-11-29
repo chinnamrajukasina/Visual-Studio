@@ -14,8 +14,8 @@ export default function Org({ currentOrg, handleRemoveOrg, handleUpdateOrg }) {
     }
     updatedOrg.employees.push({
       id: updatedOrg.employees.length + 1,
-      name: `xman${updatedOrg.employees.length + 1}`,
-      email: `xman${updatedOrg.employees.length + 1}@ekip.com`
+      name: `Lecturar${updatedOrg.employees.length + 1}`,
+      email: `Lecturar${updatedOrg.employees.length + 1}@aec.edu.in`
     });
     console.log("from handleAddEmployee ", updatedOrg);
     setOrg(updatedOrg);
