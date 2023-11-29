@@ -18,13 +18,13 @@ const orgs = [
     },
     {
         "id": "655b8586274f60195827be0e",
-        "name": "Aditya Engineering College",
+        "name": "Sri Sai Aditya Engineering College",
         "address": "Surampalem, Kakinada",
         "employees": []
     },
     {
         "id": "655b873f274f60195827be12",
-        "name": "Aditya Engineering College",
+        "name": "Sai Aditya Engineering College",
         "address": "Surampalem, Kakinada",
         "employees": []
     }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Button } from 'antd';
 import EmpList from './EmpList';
+import Input from 'antd/es/input/Input';
 
 export default function Org({ currentOrg, handleRemoveOrg, handleUpdateOrg }) {
   const [org, setOrg] = useState(currentOrg);
@@ -26,21 +27,24 @@ export default function Org({ currentOrg, handleRemoveOrg, handleUpdateOrg }) {
     const updatedOrg = { ...org, name, address };
     console.log(updatedOrg);
     handleUpdateOrg(updatedOrg);
-    setOrg(updatedOrg); // Update the local state
+   setOrg(updatedOrg); // Update the local state
   };
+
+
+  
 
   return (
     org && (
-      <Card title={org.name} style={{ width: 300, backgroundColor: 'DodgerBlue' }}>
+      <Card title={org.name} style={{ width: 450, backgroundColor: 'DodgerBlue' }}>
         <label>
-          Organization name: <input value={name} onChange={(e) => setName(e.target.value)} type="text" />
+          Organization name: <Input value={name} onChange={(e) => setName(e.target.value)} type="text" />
         </label>
         <br />
         <label>
-          Organization Address: <input value={address} onChange={(e) => setAddress(e.target.value)} type="text" />
+          Organization Address: <Input value={address} onChange={(e) => setAddress(e.target.value)} type="text" />
         </label>
         <div>
-          <Button onClick={() => handleUpdate(org.id)}>Update Org</Button>
+          <Button  onClick={() => handleUpdate(org.id)} >Update Org</Button>
           <Button onClick={() => handleRemoveOrg(org.id)}>Remove Org</Button>
           <Button onClick={() => handleAddEmployee()}>Add Employee</Button>
         </div>

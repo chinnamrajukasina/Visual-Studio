@@ -9,7 +9,7 @@ export default function OrgList(data) {
     setOrgs(orgs.filter(org => org.id !== id))
   }
   const handleUpdateOrg = (org) =>{
-    debugger;
+    // debugger;
     console.log("in orglist")
     const id = org.id;
     console.log("updated operations on", id);
@@ -21,8 +21,6 @@ export default function OrgList(data) {
   }
 
   return (
-
-
       orgs.map(org =>
         <Org
           currentOrg={org}

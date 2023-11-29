@@ -1,10 +1,10 @@
-import OrgList from "./components/OrgList";
 import data from "./data"
+import Admin from "./Admin";
 
 function App() {
   return (
     <>       
-     <OrgList orgs={data}/>  
+     <Admin orgs={data}/>  
     </>
     );
 }
