@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card } from 'antd';
+import { Button, Card} from 'antd';
 
 export default function Emp({ emp, handleRemoveEmp, handleUpdateEmp }) {
 
@@ -23,8 +23,9 @@ export default function Emp({ emp, handleRemoveEmp, handleUpdateEmp }) {
         Employee email: <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" />
       </label>
       <div>
-        <button onClick={() => handleUpdate(emp.id)}>Update Emp</button>
-        <button onClick={() => handleRemoveEmp(emp.id)}>Remove Emp</button>
+        <Button onClick={() => handleUpdate(emp.id)}>Update Emp</Button>
+        <Button onClick={() => handleRemoveEmp(emp.id)}>Remove Emp</Button>
+
       </div>
     </Card>
   )
