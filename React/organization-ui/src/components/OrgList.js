@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Org from './Org';
+import { updateOrg } from '../service/OrgSevice';
 
 export default function OrgList({ orgs: initialOrgs }) {
   const [orgs, setOrgs] = useState(initialOrgs);
@@ -9,14 +10,29 @@ export default function OrgList({ orgs: initialOrgs }) {
     setOrgs(orgs.filter(org => org.id !== id));
   };
 
-  const handleUpdateOrg = (updatedOrg) => {
+  // const handleUpdateOrg = (updatedOrg) => {
+  //   console.log("Update operation on ", updatedOrg.id);
+  //   setOrgs(prevOrgs =>
+  //     prevOrgs.map(org =>
+  //       org.id === updatedOrg.id ? { ...org, name: updatedOrg.name, address: updatedOrg.address } : org
+  //     )
+  //   );
+  // };
+
+  const handleUpdateOrg = async (updatedOrg) => {
     console.log("Update operation on ", updatedOrg.id);
-    setOrgs(prevOrgs =>
-      prevOrgs.map(org =>
+  
+    // Make the update in the frontend
+    setOrgs((prevOrgs) =>
+      prevOrgs.map((org) =>
         org.id === updatedOrg.id ? { ...org, name: updatedOrg.name, address: updatedOrg.address } : org
       )
     );
+  
+    var updateResult = await updateOrg(updatedOrg);
+    console.log('org updated in backend' ,updateResult)
   };
+  
 
   // const handleAddEmployee = (orgId) => {
   //   setOrgs(prevOrgs =>

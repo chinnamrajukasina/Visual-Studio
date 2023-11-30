@@ -32,14 +32,13 @@ export default function Org({ currentOrg, handleRemoveOrg, handleUpdateOrg }) {
     setOrg(updatedOrg);
   };
   const handleRemoveEmp = (id) => {
-    var updatedOrg = { ...org };
-    if (updatedOrg.employees == null) {
-      updatedOrg.employees = [];
+    // var updatedOrg = { ...org };
+    if (org.employees == null) {
+      org.employees = [];
     }
     console.log("Remove operation on ", id);
-    var updatedEmps = updatedOrg.employees.filter(emp => emp.id !== id);
-    updatedOrg = {...updatedOrg, updatedEmps};
-
+    var updatedEmps = org.employees.filter(emp => emp.id !== id);
+    var updatedOrg = {...org, employees: updatedEmps};
     setOrg(updatedOrg)
   }
 
