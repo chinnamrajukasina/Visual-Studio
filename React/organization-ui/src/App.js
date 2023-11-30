@@ -1,12 +1,9 @@
-import data from "./data"
-import Admin from "./Admin";
+import Admin from "./components/Admin";
 
 function App() {
   return (
-    <>       
-     <Admin orgs={data}/>  
-    </>
-    );
+    <Admin />
+  );
 }
 
 export default App;
