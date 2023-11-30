@@ -1,15 +1,13 @@
 // Admin.js
 import OrgList from './OrgList';
-import { Card } from 'antd';
+import { Card, Spin } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { fetchData } from '../service/OrgSevice';
 
 
-function Admin() {
-
-  
+function Admin() {  
 const[orgs, setOrgs] =useState([]);
-
+const [loading, setLoading] = useState(true);
 useEffect(() => {
   const fetchDataFromApi = async () => {
     try {
@@ -18,11 +16,11 @@ useEffect(() => {
     } catch (error) {
       // setError(error);
     } finally {
-      // setLoading(false);
+      setLoading(false);
     }
   };
 
-  fetchDataFromApi();
+    fetchDataFromApi();
   
 }, []);
 
@@ -30,7 +28,14 @@ useEffect(() => {
     <div style={{ display: 'flex' }}>
       <Card title="Chairman" headStyle={{ color: 'white', textAlign: 'center', fontSize: '2rem' }}
         style={{ flex: '1', backgroundColor: 'navy' }}>
-        {<OrgList orgs={orgs} /> }
+        {
+          loading ? (
+          <Spin size="large" tip="Loading..." /> // Show Spin component while loading
+        ) : (
+          <OrgList orgs={orgs} />
+        )
+          
+          }
       </Card>
     </div>
   );
