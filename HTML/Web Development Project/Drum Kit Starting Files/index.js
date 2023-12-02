@@ -1,54 +1,26 @@
-for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
-    document.querySelectorAll(".drum")[i].addEventListener("click", function () {
-      var buttonInnerHTML = this.innerHTML;
-      makeSound(buttonInnerHTML); // Pass buttonInnerHTML to makeSound
-      buttonAnimation(buttonInnerHTML);
-    });
-  }
-  
-  document.addEventListener("keypress", function (event) {
-    makeSound(event.key); // Pass event.key to makeSound
-    buttonAnimation(event.key);
-  });
-  
-  function makeSound(key) {
-    switch (key) {
-      case "w":
-        var audio = new Audio("sounds/tom-1.mp3");
-        audio.play();
-        break;
-      case "a":
-        var audio = new Audio("sounds/tom-2.mp3");
-        audio.play();
-        break;
-      case "s":
-        var audio = new Audio("sounds/tom-3.mp3");
-        audio.play();
-        break;
-      case "d":
-        var audio = new Audio("sounds/tom-4.mp3");
-        audio.play();
-        break;
-      case "j":
-        var audio = new Audio("sounds/crash.mp3");
-        audio.play();
-        break;
-      case "k":
-        var audio = new Audio("sounds/kick-bass.mp3");
-        audio.play();
-        break;
-      case "l":
-        var audio = new Audio("sounds/snare.mp3");
-        audio.play();
-        break;
-      default:
-        console.log(key);
-        break;
-    }
-   
-  }
-  function buttonAnimation(currentKey){
-    var activeButton = document.querySelector("."+currentKey);
-     activeButton.classList.add("pressed");
-     setTimeout(function() { activeButton.classList.remove("pressed");},100);
+document.querySelectorAll(".drum").forEach(button => {
+  button.addEventListener("click", () => handleButtonClick(button.innerHTML));
+});
+
+document.addEventListener("keypress", event => {
+  handleButtonClick(event.key);
+});
+
+function handleButtonClick(key) {
+  makeSound(key);
+  buttonAnimation(key);
+}
+
+function makeSound(key) {
+  const soundMap = {
+    "w": "tom-1", "a": "tom-2", "s": "tom-3", "d": "tom-4",
+    "j": "crash", "k": "kick-bass", "l": "snare"
+  };
+  new Audio(`sounds/${soundMap[key]}.mp3`).play();
+}
+
+function buttonAnimation(currentKey) {
+  const activeButton = document.querySelector("." + currentKey);
+  activeButton.classList.add("pressed");
+  setTimeout(() => activeButton.classList.remove("pressed"), 10);
 }
