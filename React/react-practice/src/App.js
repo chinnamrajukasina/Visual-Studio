@@ -1,20 +1,24 @@
 // App.js
-import Boot from "./components/Boot";
-import Counter from "./components/Counter";
-import CustomCounter from "./components/CustomCounter";
-import AppRouter from "./components/Router";
+import React, { useState } from 'react';
+import './App.css';
+import SideMenu from './SideMenu';
+import MainDisplay from './MainDisplay';
 
-function App() {
+const App = () => {
+  const [selectedComponent, setSelectedComponent] = useState(null);
+
+  const handleSelectComponent = (component) => {
+    setSelectedComponent(component);
+  };
+
   return (
-    <>
-      <CustomCounter />
-      <hr/>
-      <Boot/>
-      <Counter/>
-      <AppRouter />
-    </>
+    <div className="app-container">
+      <SideMenu onSelectComponent={handleSelectComponent} />
+      <div className="content-container">
+        <MainDisplay selectedComponent={selectedComponent} />
+      </div>
+    </div>
   );
-}
+};
 
 export default App;
-
