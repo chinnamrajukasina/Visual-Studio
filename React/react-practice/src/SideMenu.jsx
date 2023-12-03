@@ -7,7 +7,7 @@ import CounterReducer from './components/CustomCounter/CounterReducer';
 import PropsContact from './components/ReactProps/PropsContact';
 import CurrentTime from './components/CurrentTime/CurrentTime';
 import BettingGame from './components/BettingGame/BettingGame';
-
+import Form from './components/Form/Form';
 
 
 
@@ -22,6 +22,8 @@ const SideMenu = ({ onSelectComponent }) => {
       <div className="menu-item" onClick={() => onSelectComponent(<CurrentTime />)}> CurrentTime</div>
       
       <div className="menu-item" onClick={() => onSelectComponent(<BettingGame />)}> BettingGame</div>
+      <div className="menu-item" onClick={() => onSelectComponent(<Form />)}> Form</div>
+
     </div>
   );
 };
