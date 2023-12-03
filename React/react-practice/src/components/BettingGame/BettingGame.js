@@ -16,14 +16,16 @@ export default function BettingGame() {
 
   return (
     <div>
-      <header style={{ textAlign: 'center', marginBottom: '20px', border: '1px solid #ccc'}}>
+      <header style={{ textAlign: 'center', marginBottom: '20px', border: '1px solid #ccc' }}>
         <h1>Welcome to the Game</h1>
-        <div style={{ border: '1px solid #ccc', padding: '10px'  }}>
-          <h2 >{result}</h2>
-        </div>
+        {result && (
+          <div style={{ border: '1px solid #ccc', padding: '10px' }}>
+            <h2>{result}</h2>
+          </div>
+        )}
       </header>
 
-      <div style={{ display: 'flex', justifyContent: 'space-around' , textAlign:'center'}}>
+      <div style={{ display: 'flex', justifyContent: 'space-around', textAlign: 'center' }}>
         <div style={{ border: '1px solid #ccc', padding: '10px' }}>
           <h1>{p1}</h1>
           <h2>Player 1</h2>
