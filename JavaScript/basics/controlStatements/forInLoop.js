@@ -9,11 +9,13 @@ var colors = {
 
 for (var color in colors)
     console.log(color + ' -> ' + colors[color])
+console.log('forin objects');
 
 //for Arrays
 var colors = [ 'saffron', 'white', 'green' ]
 for (var color in colors)
     console.log(color + ' -> ' + colors[color])
+    console.log('forin arrays');
 
 
 //forin objects
