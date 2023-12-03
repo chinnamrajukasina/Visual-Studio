@@ -1,18 +1,19 @@
- body .PropsContact {
+body .PropsContact{
   font-family: sans-serif;
   margin: 0 auto;
   padding: 25px;
   max-width: 400px;
   min-width: 400px;
-  background-color: #ec1616;
-  text-align: center;
-  display: grid;
- }
+  /* text-align: right; */
+  
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+}
 
-.PropsContactHeading   {
+.heading {
   text-align: center;
   font-size: 2em;
-  color: red;
+  color: #2d3436;
   margin: 20px 0 30px;
 }
 
@@ -24,7 +25,7 @@
   margin: 50px 0;
   height: 200px;
   box-shadow: 0 2px 5px #ccc;
-  text-align: left;
+
 }
 
 .top {
@@ -64,4 +65,4 @@
 .info {
   margin: 20px 0;
   color: #1a7e76;
-} 
+}

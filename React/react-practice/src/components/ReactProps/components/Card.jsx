@@ -4,7 +4,8 @@ import Detail from "./Detail";
 
 function Card(props) {
   return (
-    <div className="card">
+    <div className = "PropsContact">
+    <div className="card" >
       <div className="top">
         <h2 className="name">{props.name}</h2>
         <Avatar img={props.img} />
@@ -13,6 +14,7 @@ function Card(props) {
         <Detail detailInfo={props.tel} />
         <Detail detailInfo={props.email} />
       </div>
+    </div>
     </div>
   );
 }

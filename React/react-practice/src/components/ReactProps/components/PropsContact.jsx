@@ -5,7 +5,7 @@ import contacts from "../contacts";
 
 function createCard(contact) {
   return (
-    <Card class ='PropsContact'
+    <Card
       id ={contact.id}
       key={contact.id}
       name={contact.name}
@@ -18,11 +18,10 @@ function createCard(contact) {
 
 function PropsContact() {
   return (
-    <div>
-      <h1 className="PropsContactHeading">My Contacts</h1>
+    <div className = "PropsContact">
+      <h1 className="heading">My Contacts</h1>
       {contacts.map(createCard)}
-    </div>
-  );
-}
+      </div>
+  );}
 
 export default PropsContact;
