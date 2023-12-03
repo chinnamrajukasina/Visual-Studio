@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Card";
-import contacts from "../contacts";
- import '../styles.css';
+import contacts from "./contacts";
+ import './styles.css';
 
 function createCard(contact) {
   return (

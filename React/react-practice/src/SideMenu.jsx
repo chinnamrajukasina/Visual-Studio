@@ -4,7 +4,10 @@ import Hello from './components/Hello';
 import AppRouter from './components/Router/AppRouter';
 import Counter from './components/CustomCounter/Counter';
 import CounterReducer from './components/CustomCounter/CounterReducer';
-import PropsContact from './components/ReactProps/components/PropsContact';
+import PropsContact from './components/ReactProps/PropsContact';
+import CurrentTime from './components/CurrentTime/CurrentTime';
+import BettingGame from './components/BettingGame/BettingGame';
+
 
 
 
@@ -16,6 +19,9 @@ const SideMenu = ({ onSelectComponent }) => {
       <div className="menu-item" onClick={() => onSelectComponent(<Counter />)}> Counter</div>
       <div className="menu-item" onClick={() => onSelectComponent(<CounterReducer />)}> CounterReducer</div>
       <div className="menu-item" onClick={() => onSelectComponent(<PropsContact />)}> PropsContact</div>
+      <div className="menu-item" onClick={() => onSelectComponent(<CurrentTime />)}> CurrentTime</div>
+      
+      <div className="menu-item" onClick={() => onSelectComponent(<BettingGame />)}> BettingGame</div>
     </div>
   );
 };
