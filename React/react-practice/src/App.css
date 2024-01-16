@@ -21,8 +21,9 @@
   
   .main-display {
     flex: 1;
-    padding-left: 3%;
+    padding-left: 4%;
   }
+
   /* SideMenu.css */
   .menu-item {
     color: rgb(8, 126, 164);
